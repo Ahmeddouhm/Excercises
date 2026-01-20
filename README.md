@@ -1,1 +1,2 @@
 # Excercises
+Simple C# Excercises :)

@@ -15,15 +15,20 @@ while (!isFinished)
     while (guess != secretNumber)
     {
         Console.Write("Enter Your Guess : ");
-        guess = int.Parse(Console.ReadLine());
-        if (guess > secretNumber)
+        try { guess = int.Parse(Console.ReadLine()); }
+        catch (Exception e) { Console.WriteLine(e.Message); }
+        if (guess >= 10 || guess <= 0)
         {
-            Console.WriteLine("Be Lower");
-            guesses++;
+            Console.WriteLine("Enter in Range 1 - 10");
         }
-        else if (guess < secretNumber)
+        else if (guess < secretNumber )
         {
             Console.WriteLine("Be Higher");
+            guesses++;
+        }
+        else if (guess > secretNumber )
+        {
+            Console.WriteLine("Be Lower");
             guesses++;
         }
     }

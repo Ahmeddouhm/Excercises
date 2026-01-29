@@ -3,4 +3,5 @@
   <Project Path="Dice Game/Dice Game.csproj" />
   <Project Path="Guess My Number/Guess My Number.csproj" Id="1d13b172-1f67-4f82-9acf-f0b1707d7517" />
   <Project Path="RockPaperScissors/RockPaperScissors.csproj" Id="cc7ce816-505f-45a9-8bdc-4e180197d58a" />
+  <Project Path="Sort Array !/Sort Array !.csproj" Id="dd2c0d4e-825c-4c6d-8c58-8e5945bbbc33" />
 </Solution>

@@ -25,6 +25,7 @@ static int[] CreateArray(int size , int range)
         array[i] = numToCheck;
         Console.Write($"[{array[i]}]");
     }
+    Console.WriteLine();
 
     return array;
 }
@@ -35,13 +36,8 @@ static int[] TakeUserArray(int size)
 
     for (int i = 0; i < userArray.Length; i++)
     {
-        Console.Write($"\nEnter [{i}] : ");
+        Console.Write($"Enter [{i}] : ");
         userArray[i] = int.Parse(Console.ReadLine());
-    }
-
-    foreach (var item in userArray)
-    {
-        Console.Write($"{item} ");
     }
 
     return userArray;

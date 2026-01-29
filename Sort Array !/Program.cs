@@ -7,15 +7,12 @@ int arrSize = int.Parse(Console.ReadLine());
 Console.Write("Enter Range Of Values : ");
 int arrRangeOfVals = int.Parse(Console.ReadLine());
 
-CreateArray(arrSize , arrRangeOfVals);
+Console.WriteLine((Validation(CreateArray(arrSize, arrRangeOfVals), TakeUserArray(arrSize))) ? "TRUE" : "FALSE");
 
-
-static void CreateArray(int size , int range) 
+static int[] CreateArray(int size , int range) 
 {
     Random rnd = new Random();
     int[] array = new int[size];
-    int[] userArray = new int[size];
-
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -28,4 +25,42 @@ static void CreateArray(int size , int range)
         array[i] = numToCheck;
         Console.Write($"[{array[i]}]");
     }
+
+    return array;
+}
+
+static int[] TakeUserArray(int size) 
+{
+    int[] userArray = new int[size];
+
+    for (int i = 0; i < userArray.Length; i++)
+    {
+        Console.Write($"\nEnter [{i}] : ");
+        userArray[i] = int.Parse(Console.ReadLine());
+    }
+
+    foreach (var item in userArray)
+    {
+        Console.Write($"{item} ");
+    }
+
+    return userArray;
+}
+
+static bool Validation(int[] array,int[] userArray) 
+{
+    array.Sort();
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == userArray[i])
+        {
+            count++;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
 }

@@ -7,7 +7,7 @@ int arrSize = int.Parse(Console.ReadLine());
 Console.Write("Enter Range Of Values : ");
 int arrRangeOfVals = int.Parse(Console.ReadLine());
 
-Console.WriteLine((Validation(CreateArray(arrSize, arrRangeOfVals), TakeUserArray(arrSize))) ? "TRUE" : "FALSE");
+Console.WriteLine((Validation(CreateArray(arrSize, arrRangeOfVals), TakeUserArray(arrSize))) ? "====\n" + "TRUE" : "====\n" + "FALSE");
 
 static int[] CreateArray(int size , int range) 
 {

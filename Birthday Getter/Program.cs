@@ -24,13 +24,36 @@ while (!isValid)
         Console.WriteLine($"======================================");
         TimeSpan difDate = DateTime.Now.Subtract(userDate);
 
-        var years = difDate.TotalDays / 365.25;
-        var remainderYears = (difDate.TotalDays % 365.25);
+        DateTime today = DateTime.Today;
+        DateTime nextBirthday = new DateTime(today.Year, userDate.Month, userDate.Day);
 
-        var months = remainderYears / 30.4375;
-        var days = (difDate.TotalDays % 365.25) % 30.4375;
+        if (nextBirthday < today)
+        {
+            nextBirthday.AddYears(1);
+        }
 
-        Console.WriteLine($"Your Age Now is ( {years:F2} Years / {(int)months} Months / {(int)days} Days ) and still counting ...");
+        TimeSpan remainDays = (nextBirthday - today);
+
+        int years = today.Year - userDate.Year;
+        if (today < userDate.AddYears(years))
+            years--;
+
+        userDate = userDate.AddYears(years);
+
+        int months = 0;
+        while (userDate.AddMonths(1) <= today)
+        {
+            userDate = userDate.AddMonths(1);
+            months++;
+        }
+
+        int days = (today - userDate).Days;
+
+
+        Console.WriteLine($"Your Age Now is ( {years:F0} Years / {(int)months} Months / {(int)days} Days ) and still counting ...");
+        
+        Console.WriteLine($"Your Next BD in {remainDays.Days} Days");
+
 
     }
     catch (FormatException e)

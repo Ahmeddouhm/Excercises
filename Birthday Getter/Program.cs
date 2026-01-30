@@ -52,7 +52,7 @@ while (!isValid)
 
         Console.WriteLine($"Your Age Now is ( {years:F0} Years / {(int)months} Months / {(int)days} Days ) and still counting ...");
         
-        Console.WriteLine($"Your Next BD in {remainDays.Days} Days");
+        Console.WriteLine($"Your Next BirthDay in {remainDays.Days} Days");
 
 
     }

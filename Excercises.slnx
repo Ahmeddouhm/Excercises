@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="Birthday Getter/Birthday Getter.csproj" Id="1009a8cb-dbde-474e-aeb9-f67ede8c0a33" />
   <Project Path="Calculator/Calculator.csproj" />
   <Project Path="Dice Game/Dice Game.csproj" />
   <Project Path="Guess My Number/Guess My Number.csproj" Id="1d13b172-1f67-4f82-9acf-f0b1707d7517" />
